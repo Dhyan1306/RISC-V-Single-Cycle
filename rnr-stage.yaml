@@ -1,0 +1,28 @@
+# CI configuration. Edit this file, then commit and push.
+#
+# 1. Set `stage` (fetch -> decode -> execute -> writeback -> integration).
+#    CI checks that stage and every earlier one; modules of later stages are ignored.
+# 2. Point `source_files` at your .sv file for each module you have written. The paths below are
+#    only suggestions: use any file names or folders (no spaces in paths).
+# 3. Only if your module/port/parameter names differ from the spec, add under that module:
+#      top_module: my_name
+#      ports:  {spec_port: your_port}
+#      params: {DATA_WIDTH: your_param}
+#    See the assignment handout for an example.
+# 4. A module that instantiates other modules (id_stage, ex_stage, single_cycle_riscv) needs those
+#    modules listed here too.
+yaml_version: 1
+stage: fetch
+
+modules:
+  if_stage:           {source_files: [IF_Stage/rtl.sv]}
+  decoder:            {source_files: [Decoder/rtl.sv]}
+  imm_generator:      {source_files: [Immediate_Generator/rtl.sv]}
+  register_file:      {source_files: [Register_File/rtl.sv]}
+  main_control:       {source_files: [Main_Control/rtl.sv]}
+  id_stage:           {source_files: [ID_Stage/rtl.sv]}
+  alu:                {source_files: [ALU/rtl.sv]}
+  alu_control:        {source_files: [ALU_Control/rtl.sv]}
+  ex_stage:           {source_files: [EX_Stage/rtl.sv]}
+  wb_stage:           {source_files: [WB_Stage/rtl.sv]}
+  single_cycle_riscv: {source_files: [Single_Cycle_RISCV/rtl.sv]}
