@@ -15,14 +15,35 @@ yaml_version: 1
 stage: fetch
 
 modules:
-  if_stage:           {source_files: [IF_Stage/rtl.sv]}
-  decoder:            {source_files: [Decoder/rtl.sv]}
-  imm_generator:      {source_files: [Immediate_Generator/rtl.sv]}
-  register_file:      {source_files: [Register_File/rtl.sv]}
-  main_control:       {source_files: [Main_Control/rtl.sv]}
-  id_stage:           {source_files: [ID_Stage/rtl.sv]}
-  alu:                {source_files: [ALU/rtl.sv]}
-  alu_control:        {source_files: [ALU_Control/rtl.sv]}
-  ex_stage:           {source_files: [EX_Stage/rtl.sv]}
-  wb_stage:           {source_files: [WB_Stage/rtl.sv]}
-  single_cycle_riscv: {source_files: [Single_Cycle_RISCV/rtl.sv]}
+  if_stage:
+    source_files: [IF_Stage/EC095_if_stage.sv]
+
+  decoder:
+    source_files: [Decoder/EC095_decoder.sv]
+
+  imm_generator:
+    source_files: [Immediate_Generator/EC095_imm_generator.sv]
+
+  register_file:
+    source_files: [Register_File/EC095_register_file.sv]
+
+  main_control:
+    source_files: [Main_Control/EC095_main_control.sv]
+
+  id_stage:
+    source_files: [ID_Stage/EC095_id_stage.sv]
+
+  alu:
+    source_files: [ALU/EC095_alu.sv]
+
+  alu_control:
+    source_files: [ALU_Control/EC095_alu_control.sv]
+
+  ex_stage:
+    source_files: [EX_Stage/EC095_ex_stage.sv]
+
+  wb_stage:
+    source_files: [WB_Stage/EC095_wb_stage.sv]
+
+  single_cycle_riscv:
+    source_files: [Single_Cycle_RISCV/EC095_single_cycle_riscv.sv]
