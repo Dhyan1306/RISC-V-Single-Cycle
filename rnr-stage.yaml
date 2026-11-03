@@ -12,7 +12,7 @@
 # 4. A module that instantiates other modules (id_stage, ex_stage, single_cycle_riscv) needs those
 #    modules listed here too.
 yaml_version: 1
-stage: fetch
+stage: integration
 
 modules:
   if_stage:
